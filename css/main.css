@@ -1,0 +1,228 @@
+/* --------------------------------------------------------------------
+      A CUCA
+      Main style-sheet
+      Ge Ricci & Be Aranha, 2024
+-------------------------------------------------------------------- */
+@import "vars.css";
+
+/* ------------------------------ RESET ---------------------------- */
+
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote,
+  pre, a, abbr, acronym, address, aside, article, big, cite, code, del, dfn, em, figure, figcaption,
+  footer, header, img, ins, kbd, main, nav, q, s, samp, section, small, strike, strong, sub, sup, tt, var, b,
+  u, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption,
+  tbody, tfoot, thead, tr, th, td {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+header, footer, main, nav, aside, article, section, figure, figcaption {
+  display: block;
+}
+
+/* ------------------------------ DEFAULTS ---------------------------- */
+
+html {height: 100%;}
+
+body {
+  height: 100%;
+  font: 100%/1.58 var(--stack);
+  color: var(--body-text);
+  background-color: var(--body-bg);
+  background-image: url(../img/body-bg.svg);
+  background-position-x: center;
+  background-size: cover;
+  scroll-behavior: smooth;
+}
+
+h1 {
+  width: 50%;
+  line-height: 1.2;
+  font-size: calc(0.9em + 0.5vw);
+  text-align: center;
+  margin: calc(1.5em + 0.25vw) auto calc(2em + 0.25vw);
+}
+
+h2 {
+  font-size: calc(1.8em + 0.25vw);
+  line-height: 1.2;
+  margin-bottom: calc(1em + 0.5vw);
+}
+h3 {
+  font-size: calc(1.4em + 0.25vw);
+  line-height: 1.2;
+}
+h4 {
+  font-size: calc(1.2em + 0.25vw);
+}
+p, li, dt, dd, h5 {
+  font-size: calc(1em + 0.25vw);
+  font-weight: 400;
+}
+
+h5 {
+  font-style: italic;
+}
+
+li li {font-size: 100%;}
+
+a {
+  color: var(--n-dark);
+}
+a:visited {
+  color: var(--body-text);
+}
+
+em, q {
+  font-family: var(--stack-i);
+  font-style: normal;
+}
+
+strong {
+  font-weight: 800;
+}
+
+img {
+  max-width: 100%;
+  border: 0;
+}
+
+figure {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem 1.5rem;
+  font-weight: 600;
+  background-color: #FFF;
+  padding: calc(1rem + 1vw);
+  margin: calc(1.5rem + 1vw) 0;
+  border: 1px solid var(--main-color);
+}
+
+figcaption {
+  line-height: 1.3;
+  color: var(--main-color);
+  background-color: #FFF;
+}
+
+button {
+  background-color: rgba(255,255,255,0);
+  padding: 0;
+  border: none;
+  cursor: pointer;
+}
+
+button svg {vertical-align: bottom;}
+
+hr {display: none;}
+
+dl {
+  margin: calc(1.5rem + 1vw) 0;
+}
+dt {font-weight: 800;}
+
+dl div {
+  display: flex;
+  gap: 1em;
+}
+
+
+/* ------------------------------ LAYOUT ---------------------------- */
+
+main {
+  box-sizing: border-box;
+  width: 90%;
+  max-width: 1400px;
+  background-color: var(--main-u-light);
+  padding: calc(1rem + 1vw);
+  margin: 0 auto calc(1.5rem + 1vw);;
+  border-width: 16px;
+  border-style: solid;
+  border-image-source: url('../img/border.svg');
+  border-image-width: 16px;
+  border-image-outset: 8px;
+  border-image-repeat: space;
+  border-image-slice: 16;
+}
+
+footer {
+  width: 90%;
+  max-width: 1400px;
+  margin: 0 auto 1rem;
+}
+footer p {
+  font-size: 0.9em;
+  text-align: center;
+}
+
+footer p:first-of-type {position: relative;}
+footer p:first-of-type::before, footer p:first-of-type::after {
+  content: "";
+  display: block;
+}
+
+footer p:first-of-type::after {
+  width: 17px;
+  height: 17px;
+  background-color: red;
+  margin: 1rem auto;
+  border-radius: 17px;
+}
+footer p:first-of-type::before {
+  position: absolute;
+  bottom: 11px;
+  left: calc(50% - 15px);
+  width: 15px;
+  height: 11px;
+  border-right: 4px solid green;
+  border-radius: 50px;
+}
+
+footer a, footer a:visited {color: var(--body-text);}
+
+
+/* ------------------------------ NAVIGATION ---------------------------- */
+
+
+
+
+/* ------------------------------ ARTICLES ---------------------------- */
+
+.sr-only {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+article.entry {padding: calc(1rem + 1vw);}
+article.entry + article.entry {margin-top: calc(1rem + 1vw);}
+
+article p + p {margin-top: 0.8em;}
+article ul {margin: 1em;}
+
+article.intro {
+  background-color: var(--n-u-light);
+}
+
+.dt-published {
+  font-size: 0.9em;
+  background-repeat: no-repeat;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='currentColor'%3E%3Cpath d='M20.998 3V5C20.998 14.6274 15.6255 19 8.99805 19L5.24077 18.9999C5.0786 19.912 4.99805 20.907 4.99805 22H2.99805C2.99805 20.6373 3.11376 19.3997 3.34381 18.2682C3.1133 16.9741 2.99805 15.2176 2.99805 13C2.99805 7.47715 7.4752 3 12.998 3C14.998 3 16.998 4 20.998 3ZM12.998 5C8.57977 5 4.99805 8.58172 4.99805 13C4.99805 13.3624 5.00125 13.7111 5.00759 14.0459C6.26198 12.0684 8.09902 10.5048 10.5019 9.13176L11.4942 10.8682C8.6393 12.4996 6.74554 14.3535 5.77329 16.9998L8.99805 17C15.0132 17 18.8692 13.0269 18.9949 5.38766C17.6229 5.52113 16.3481 5.436 14.7754 5.20009C13.6243 5.02742 13.3988 5 12.998 5Z'%3E%3C/path%3E%3C/svg%3E");
+  padding-left: 24px;
+}
+
+ul.menu li {
+  padding-bottom: 0.5em;
+  margin-bottom: 0.5em;
+  border-bottom: 1px dotted currentColor;
+}
+
+ul.menu li::marker {
+  display: inline-block;
+  width: 24px;
+  content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='currentColor'%3E%3Cpath d='M4.22235 3.80753L10.9399 10.525L8.11144 13.3535L4.22235 9.46438C2.66026 7.90229 2.66026 5.36963 4.22235 3.80753ZM14.2683 12.1464L13.4147 12.9999L20.4858 20.071L19.0716 21.4852L12.0005 14.4141L4.92946 21.4852L3.51525 20.071L12.854 10.7322C12.2664 9.27525 12.8738 7.1769 14.4754 5.5753C16.428 3.62268 19.119 3.1478 20.4858 4.51464C21.8526 5.88147 21.3778 8.57242 19.4251 10.525C17.8235 12.1267 15.7252 12.7341 14.2683 12.1464Z'%3E%3C/path%3E%3C/svg%3E");
+  margin: 0 0 0 1em;
+}
