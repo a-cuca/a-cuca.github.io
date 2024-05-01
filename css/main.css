@@ -45,6 +45,14 @@ h1 {
   margin: calc(1.5em + 0.25vw) auto calc(2em + 0.25vw);
 }
 
+h1.active {
+  position: fixed;
+  right: 5%;
+  width: text-a;
+  text-align: right;
+  width: 220px;
+}
+
 h2 {
   font-size: calc(1.5em + 0.5vw);
   line-height: 1.2;
@@ -133,11 +141,8 @@ dl div {
   outline-offset: 2px;
 }
 
+details div.content {margin-bottom: 1.5rem;}
 summary {
-  /* position: relative;
-  font-size: 0.8em;
-  font-variation-settings: "wght" 700;
-  list-style: none; */
   background-color: rgba(255,255,255,0.3);
   padding: 0.25rem 1rem;
   margin-bottom: 1.5rem;
@@ -146,17 +151,13 @@ summary {
 }
 
 
-summary svg {
-  position: absolute;
-  top: -13px;
-  left: -1rem;
-}
-
-
 /* ------------------------------ LAYOUT ---------------------------- */
 
 main {
   box-sizing: border-box;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+  gap: 2rem;
   width: 90%;
   max-width: 1400px;
   background-color: var(--main-u-light);
@@ -241,18 +242,24 @@ div.h-group div.content {
 }
 
 section.entry {padding: calc(1rem + 1vw);}
-section.entry + section.entry {margin-top: calc(1rem + 1vw);}
 
-article p + p {margin-top: 0.8em;}
+article p + p, .editorial p + p {margin-top: 0.8em;}
 article ul:not(.menu) {margin: 1em;}
 
 section.intro {
-  background-color: var(--n-u-light);
+  align-self: baseline;
+  background-color: rgba(255,255,255,0.9);
+  border-radius: 0.3rem;
+}
+section.intro h2 {
+  font-size: calc(1.7em + 0.5vw);
 }
 
 .intro p {
   font-size: calc(0.9em + 0.25vw);
 }
+
+p.published {margin-bottom: 1.5rem;}
 
 h2.p-name + p.published {
   margin: -1.5rem 0 2rem;
@@ -265,11 +272,11 @@ h2.p-name + p.published {
   padding-left: 24px;
 }
 
+ul.menu {margin-top: 1em;}
+
 div.menu-block + div.menu-block {
   margin-top: 1.5rem;
 }
-
-ul.menu {margin-top: 1em;}
 
 ul.menu li {
   display: flex;
