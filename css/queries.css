@@ -4,6 +4,23 @@
           		Ge Ricci, 2024
 -------------------------------------------------------------------- */
 
-@media screen and (min-width: 800px) {
-    
+@media screen and (min-width: 900px) {
+	main {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+	}
+
+	section.dessert {
+		grid-column: 1/ span 2;
+	}
+}
+
+@media screen and (min-width: 1300px) {
+	main {
+		grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+	}
+	section.dessert .menu-block {
+		display: grid;
+		grid-template-columns: 1.5fr 1fr;
+	}
 }

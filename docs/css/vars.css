@@ -47,6 +47,7 @@
 
     --high: #BAE4AF;
     --high-light: #E2E4AF;
+    --high-extra-light: #E6FFE1;
   
     --main-color: #054B5A;
     --main-light: #40BFBF;
@@ -56,6 +57,8 @@
     --n-u-light: #FFF;
     --n-medium1: #CCC;
     --n-medium: #666;
+
+    --radius: 0.3em;
   
     --stack: "Fraunces", Iowan Old Style, Apple Garamond, Baskerville, Times New Roman, Droid Serif, Times, Source Serif Pro, serif;
     --stack-i: "Fraunces Italic", Iowan Old Style, Apple Garamond, Baskerville, Times New Roman, Droid Serif, Times, Source Serif Pro, serif;

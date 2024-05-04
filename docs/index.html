@@ -25,8 +25,10 @@
     <div id="container">
         <!-- PAGE HEADER -->
         <header>
-            <h1><img src="./img/logo.svg" alt="A Cuca, Receitas da Beatriz"></h1>
-            
+            <h1>
+                <a href="index.html">
+                    <img src="./img/logo.svg" alt="A Cuca, Receitas da Beatriz"></a>
+            </h1>            
         </header>
 
         <div id="wrapper">
@@ -37,7 +39,7 @@
     <p class="published">
         <time class="dt-published" datetime="2007-10-11">11 de Outubro de 2007</time>
     </p>
-    <p>Resolvi fazer um blog de receitas culinárias porque meu filho insiste que eu escreva um livro para preservá-las.</p>
+    <p class="first">Resolvi fazer um blog de receitas culinárias porque meu filho insiste que eu escreva um livro para preservá-las.</p>
     <p>Postar é mais fácil que publicar. 
         É. São pratos tradicionais da minha família aos quais foram se juntando outros ao longo dos anos. </p>
     <p>Minha idéia é apresentar uma receita por dia. Quem sabe também dar idéias de cardápios. Serão cardápios simples, de todo dia, 
@@ -67,7 +69,7 @@
                 nos bares, para proteger a bebida. Sobre ela vinham servidos petisquinhos como amendoins ou pedacinhos 
                 de picles e queijo. Daí para uma mesa de mais de dez pratos, com os mais variados sabores, foi um pulo.</p>
 
-            <p>Os franceses são mais comedidos em seus hors-d'oeuvres, com seus patés e pães pois guardam-se para as 
+            <p>Os franceses são mais comedidos em seus <em lang="fr">hors-d'oeuvres</em>, com seus patés e pães pois guardam-se para as 
                 delícias (?) de seu menu principal.</p>
 
             <p>Dentre os <em lang="en">appetizers</em>, os mais saborosos são os da cozinha cajun, da Luisiana, com muito camarão, 
@@ -86,7 +88,7 @@
     <div class="menu-block">
         <h3>Com berinjela</h3>
         <ul class="menu" aria-label="Lista de entradas">
-            <li><a href="">Berinjela no forno</a></li>
+            <li><a href="berinjela-no-forno.html">Berinjela no forno</a></li>
             <li><a href="">Berinjela frita</a></li>
             <li><a href="">Berinjela cozida</a></li>
             <li><a href="">Babaganuche</a></li>
@@ -174,6 +176,7 @@
             <li><a href="">Sopa de Cebola à Moda Francesa</a></li>
             <li><a href="">Sopa de knoedel </a></li>
         </ul>
+        <p><img src="img/soup.svg" alt=""></p>
     </div>
 </section>
 
@@ -184,7 +187,7 @@
         <ul class="menu" aria-label="Lista de pratos">
             <li><a href="">Cuscús de sardinha</a></li>
             <li><a href="">Suflê de xuxú</a></li>
-            <li><a href="">Torta Parmentier</a></li>
+            <li><a href="torta-parmentier.html">Torta Parmentier</a></li>
             <li><a href="">Frango com quiabo</a></li>
             <li><a href="">Lasanha</a></li>
             <li><a href="">Polenta</a></li>
@@ -195,7 +198,7 @@
     </div>
 </section>
 
-<section class="entry">
+<section class="entry dessert">
     <h2 class="p-name">Sobremesas &amp; docinhos</h2>
 
     <div class="menu-block">
@@ -205,6 +208,7 @@
             <li><a href="">Turdido</a></li>
             <li><a href="">Pudim de pão</a></li>
         </ul>
+        <p><img src="img/dessert.svg" alt=""></p>
     </div>
 </section>
             </main>
@@ -223,6 +227,7 @@
     <!-- /container -->
 
     <script>
+        // Service worker
         if ("serviceWorker" in navigator) {
             window.addEventListener("load", function () {
                 navigator.serviceWorker
@@ -238,6 +243,27 @@
                     });
             });
         }
+
+        // Scroll 
+        let lastKnownScrollPosition = 0;
+        let ticking = false;
+        let h1 = document.querySelector('h1');
+
+        document.addEventListener('scroll', function(e) {
+            lastKnownScrollPosition = window.scrollY;
+
+            if (!ticking) {
+                window.requestAnimationFrame(function() {
+                    if(lastKnownScrollPosition > 130) {
+                        h1.classList.add('active');
+                    } else {
+                        h1.classList.remove('active');
+                    }
+                    ticking = false;
+                });
+                ticking = true;
+            }
+        });        
     </script>
 </body>
 
