@@ -8,10 +8,58 @@
 	main {
 		display: grid;
 		grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+		min-height: 900px;
 	}
 
 	section.dessert {
 		grid-column: 1/ span 2;
+	}	
+
+	h1.active {
+		position: fixed;
+		right: 1vw;
+		width: 70px;
+	}
+	h1.active .active {display: inline-block;}
+	h1.active :not(.active) {display: none;}	
+}
+
+@media screen and (min-width: 1000px) {
+	div.h-group {
+		display: grid;
+		grid-template-columns: 1fr 1.5fr;
+		justify-content: space-between;
+		gap: 0 3rem;
+	}
+	div.h-group p.published {
+		grid-column: 1;
+	}
+	div.h-group div.intro {
+		grid-column: 2;
+		grid-row: 1/span 3;
+	}
+
+	div.recipe {
+		display: grid;
+		grid-template-columns: 1fr 2fr;
+		gap: 4rem;
+		padding: 2rem 0;
+    margin: 2rem 0;
+		border: none;
+		border-top: 6px dotted var(--high-extra-light);
+		border-bottom: 6px dotted var(--high-extra-light);
+		border-radius: 0;
+	}
+	div.ingredients {
+		margin-bottom: 0;
+	}
+  div.ingredients li {line-height: 1.45;}
+
+	div.recipe.simple {
+		grid-template-columns: 1fr 1fr;
+	}
+	div.recipe.alone {
+		display: block;
 	}
 }
 

@@ -45,14 +45,8 @@ h1 {
   margin: calc(1.5em + 0.25vw) auto calc(2em + 0.25vw);
   transition: all 0.2s;
 }
-
-h1.active {
-  position: fixed;
-  right: 5%;
-  width: text-a;
-  text-align: right;
-  width: 220px;
-}
+  h1 .active {display: none;}
+  h1 :not(.active) {display: inline-block;}	
 
 h2 {
   font-size: calc(1.5em + 0.5vw);
@@ -66,6 +60,7 @@ h3 {
 }
 h4 {
   font-size: calc(1em + 0.25vw);
+  margin: 1.5em 0 1em;
 }
 p, li, dt, dd, h5 {
   font-size: calc(1em + 0.25vw);
@@ -256,12 +251,13 @@ section.entry {
 article p + p, .editorial p + p {margin-top: 0.8em;}
 article ul:not(.menu), article ol {margin: 1em;}
 
-section.intro {
+.intro {
+  position: relative;
   align-self: baseline;
   background-color: rgba(255,255,255,0.6);
   border-radius: var(--radius);
 }
-section.intro h2 {
+.intro h2 {
   font-size: calc(1.7em + 0.5vw);
 }
 
@@ -269,9 +265,18 @@ section.intro h2 {
   font-size: calc(0.9em + 0.25vw);
 }
 
-section.intro p.first::first-letter {
-  /* float: left;
-  font-size: 200%; */
+div.intro {
+  padding: calc(1rem + 1vw) calc(1rem + 1vw) calc(1rem + 1vw) 4.5rem;
+}
+div.intro::before {
+  content: "";
+  position: absolute;
+  width: 50px;
+  height: 50px;  
+  top: 1rem;
+  left: 1rem;
+  background-image: url(../img/from-blog.svg);
+  background-repeat: no-repeat;
 }
 
 p.published {margin-bottom: 1.5rem;}
@@ -332,7 +337,51 @@ div.note {
   border-radius: var(--radius);
 }
 
+
 /* ------------------------------ RECIPES ---------------------------- */
 
-article.h-recipe {
+div.h-group div.intro {
+  margin-bottom: 2rem;
 }
+
+div.recipe {
+  padding: 1rem;
+  border: 1px solid var(--high-extra-light);
+  border-radius: var(--radius);
+}
+
+div.recipe h3 {
+  margin-top: 0;
+}
+	
+div.recipe ul, div.recipe ol {margin-bottom: 0;}
+
+div.ingredients {
+  background-color: var(--high-extra-light);
+  padding: calc(1rem + 1vw);
+  margin-bottom: 2rem;
+  border-radius: var(--radius);
+}
+div.ingredients li + li {margin-top: 0.5em;}
+
+div.e-instructions {
+  padding: calc(1rem + 1vw);
+}
+
+div.recipe.alone div.e-instructions {
+  max-width: 25lh;
+}
+
+div.e-instructions ol li + li {
+  margin-top: 0.5em;
+}
+
+div.tips {
+  align-self: baseline;
+  padding: calc(1rem + 1vw);
+  margin-top: 2rem;
+  border: 1px solid var(--high-extra-light);
+  border-radius: var(--radius);
+}
+
+div.sugestion {}
