@@ -121,6 +121,7 @@ button {
 button svg {vertical-align: bottom;}
 
 hr {display: none;}
+abbr {cursor: help;}
 
 dl {
   margin: calc(1.5rem + 1vw) 0;
@@ -227,9 +228,26 @@ div.h-group .dt-published{
 }
 
 
-/* ------------------------------ NAVIGATION ---------------------------- */
+/* ------------------------------ TABLES ---------------------------- */
 
+table {
+  width: 100%;
+  border-spacing: 0;
+  margin: 1rem 0 2rem;
+}
 
+tr {}
+
+th, td {
+  line-height: 1.3;
+  text-align: left;
+  padding: 0.5em 1em;
+  border-bottom: 1px solid rgba(255,255,255,0.5);
+}
+
+th {
+  background-color: var(--body-bg);
+}
 
 
 /* ------------------------------ SECTIONS ---------------------------- */
@@ -340,8 +358,21 @@ div.note {
 
 /* ------------------------------ RECIPES ---------------------------- */
 
+article.h-recipe > div.content {
+  max-width: 25lh;
+  padding: calc(1rem + 1vw);
+  margin-bottom: 2rem;
+  border: 1px solid var(--high-extra-light);
+  border-radius: var(--radius);
+}
+
 div.h-group div.intro {
   margin-bottom: 2rem;
+}
+
+p.note {
+  font-family: var(--stack-i);
+  font-size: 1.1em;
 }
 
 div.recipe {
@@ -363,6 +394,7 @@ div.ingredients {
   border-radius: var(--radius);
 }
 div.ingredients li + li {margin-top: 0.5em;}
+div.ingredients ul + p {margin-top: 1.5em;}
 
 div.e-instructions {
   padding: calc(1rem + 1vw);
@@ -376,6 +408,13 @@ div.e-instructions ol li + li {
   margin-top: 0.5em;
 }
 
+div.ingredients ul + h3, div.e-instructions ol + h3 {
+  margin-top: 2em;
+}
+div.e-instructions ol + p {
+  margin-top: 1.5em;
+}
+
 div.tips {
   align-self: baseline;
   padding: calc(1rem + 1vw);
@@ -384,4 +423,21 @@ div.tips {
   border-radius: var(--radius);
 }
 
-div.sugestion {}
+div.blog-entry {
+  position: relative;
+  text-align: center;
+  background-color: var(--body-bg);
+  padding: calc(1rem + 1vw);
+  border-radius: var(--radius);
+}
+
+
+div.blog-entry a {text-decoration: none;}
+div.blog-entry a::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}

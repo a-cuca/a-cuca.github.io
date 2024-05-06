@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="keywords" content="" />
+    <meta name="theme-color" content="#685A48" />
+    <meta property="og:url" content="https://a-cuca.github.io/turdido.html" />
+    <meta property="og:title" content="Turdido" />
+    <meta property="description" content="Receita de turdido por Beatriz Ricci" />
+    <meta property="og:description" content="Receita de turdido por Beatriz Ricci" />
+    <meta property="og:image" content="" />
+    <link href="../img/favicon.svg" type="image/svg+xml" rel="icon" />
+    <link href="../img/favicon.png" type="image/png" rel="icon" />
+    <title>Turdido: A Cuca</title>
+
+    <link href="./css/main.css" rel="stylesheet" media="all" />
+    <link href="./css/queries.css" rel="stylesheet" media="all" />
+    <link rel="manifest" href="manifest.json" />
+</head>
+
+<body >
+    <div id="container">
+        <!-- PAGE HEADER -->
+        <header>
+            <h1>
+                
+                    <a href="index.html">
+                        <img src="./img/logo.svg" alt="A Cuca, Receitas da Beatriz"></a>
+                    <a class="active" href="index.html">
+                        <img class="active" src="./img/logo-sml.svg" alt="A Cuca, Receitas da Beatriz"></a>
+                
+            </h1>            
+        </header>
+
+        <div id="wrapper">
+            <main>
+                
+<article class="h-recipe">
+  <div class="h-group">
+    <h2 class="p-name">Turdido</h2>
+    <p class="published">
+      <time class="dt-published">9 de Novembro 2007</time>
+    </p>
+
+    <div class="intro">
+      <p>Em um dicionário de italiano não se encontra o significado 
+        de Turdido, e até mesmo as veneráveis anciãs descendentes 
+        italianas, das quais eu peguei a receita, não lembram mais 
+        se esse nome tem um significado.</p>
+      <p>Uma coisa que me chamou a atenção, desde a primeira vez que 
+        eu preparei os turdidos, foi sua simplicidade e sua &ldquo;elementaridade&rdquo;. 
+        São feitos com os alimentos primeiros e primordiais do homem: 
+        trigo, vinho, azeite e mel. Não são primitivos, no entanto; 
+        seriam mais simbólicos, como um maná.</p>
+    </div>
+  </div>
+
+  <div class="recipe">
+    <div class="ingredients">
+      <h3>Ingredientes</h3>
+      <ul>
+          <li class="p-ingredient">1 vidro pequeno de mel</li>
+          <li class="p-ingredient">1 copo de azeite (<em>eu, na verdade uso 
+            1/2 copo de azeite e meio copo de óleo de milho ou de canola. 
+            Isso porque o gosto do azeite pode ser enjoativo</em>)</li>
+          <li class="p-ingredient">1 copo de vinho tinto seco</li>
+          <li class="p-ingredient">farinha de trigo até dar ponto para enrolar como nhoque.</li>
+      </ul>
+    </div>
+
+    <div class="e-instructions">
+      <h3>Modo de Fazer</h3>
+      <ol>        
+        <li>Ferva o azeite com o vinho.</li>
+        <li>Depois de frio, adicione a farinha, faça pequenos 
+          nhoques e passe-os pelo ralador de queijo, fazendo 
+          uma concavidade com o dedo. Esse jeito de fazer os 
+          turdidos é para que aumente a superfície que ficará em contato com o mel.
+          Para manuseá-los melhor, envolva-os com um pouco de 
+          farinha de trigo.</li>
+        <li>Ferva o mel com meio vidro (o do mel) de água.</li>              
+        <li>Frite os turdidos até que fiquem bem dourados. </li>
+        <li>Logo que tirar da frigideira, jogue-os no mel, 
+          misturando delicadamente.</li>
+      </ol>
+
+      <div class="tips">
+        <p>Os turdidos ficam mais saborosos e mais macios, 
+          desmanchando-se na boca, no dia seguinte. </p>
+      </div>
+    </div>
+  </div>
+</article>
+            </main>
+        </div>
+
+        <hr />
+
+        <footer>
+            <p>&ldquo;A Cuca&rdquo; foi escrito por Beatriz Pichler Ricci, 2007 &ndash; 2009 &copy; <a
+                    href="https://creativecommons.org/licenses/by-nc-nd/4.0/?ref=chooser-v1" target="_blank"
+                    rel="license noopener noreferrer" style="display:inline-block;">CC BY-NC-ND 4.0</a>
+            </p>
+            <p>Site criado por Beatriz Aranha e Angela P Ricci, 2024</p>
+        </footer>
+    </div>
+    <!-- /container -->
+
+    <script>
+        // Service worker
+        if ("serviceWorker" in navigator) {
+            window.addEventListener("load", function () {
+                navigator.serviceWorker
+                    .register("/sw.js")
+                    .then(function (registration) {
+                        // Registration was successful
+                        console.log("ServiceWorker registration successful with scope: ", registration
+                            .scope);
+                    })
+                    .catch(function (err) {
+                        // registration failed :(
+                        console.log("ServiceWorker registration failed: ", err);
+                    });
+            });
+        }
+
+        // Scroll 
+        let lastKnownScrollPosition = 0;
+        let h1 = document.querySelector('h1');
+
+        document.addEventListener('scroll', function(e) {
+            lastKnownScrollPosition = window.scrollY;
+            window.requestAnimationFrame(function() {
+                if(lastKnownScrollPosition > 100) {
+                    h1.classList.add('active');
+                } else {
+                    h1.classList.remove('active');
+                }
+            });
+        }); 
+    </script>
+</body>
+
+</html>

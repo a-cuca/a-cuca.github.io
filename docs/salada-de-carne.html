@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="keywords" content="" />
+    <meta name="theme-color" content="#685A48" />
+    <meta property="og:url" content="https://a-cuca.github.io/salada-de-carne.html" />
+    <meta property="og:title" content="Salada de Carne" />
+    <meta property="description" content="Receita de Salada de Carne por Beatriz Ricci" />
+    <meta property="og:description" content="Receita de Salada de Carne por Beatriz Ricci" />
+    <meta property="og:image" content="" />
+    <link href="../img/favicon.svg" type="image/svg+xml" rel="icon" />
+    <link href="../img/favicon.png" type="image/png" rel="icon" />
+    <title>Salada de Carne: A Cuca</title>
+
+    <link href="./css/main.css" rel="stylesheet" media="all" />
+    <link href="./css/queries.css" rel="stylesheet" media="all" />
+    <link rel="manifest" href="manifest.json" />
+</head>
+
+<body >
+    <div id="container">
+        <!-- PAGE HEADER -->
+        <header>
+            <h1>
+                
+                    <a href="index.html">
+                        <img src="./img/logo.svg" alt="A Cuca, Receitas da Beatriz"></a>
+                    <a class="active" href="index.html">
+                        <img class="active" src="./img/logo-sml.svg" alt="A Cuca, Receitas da Beatriz"></a>
+                
+            </h1>            
+        </header>
+
+        <div id="wrapper">
+            <main>
+                
+<article class="h-recipe">
+  <div class="h-group">
+    <h2 class="p-name">Salada de Carne</h2>
+    <p class="published">
+      <time class="dt-published">11 de Novembro 2007</time>
+    </p>
+  </div>
+
+  <div class="recipe alone">
+
+    <div class="e-instructions">
+      <h3>Modo de Fazer</h3>
+      <ol>
+        <li>Desfie a carne e tempere com:
+          <ul>
+            <li>cebola em fatias finas,</li>
+            <li>tirinhas finas de pimentão,</li>
+            <li>um pouco de mostarda,</li>
+            <li>azeite e vinagre na proporção de 3 x 1,</li>
+            <li>sal à gosto e salsa picada.</li>
+          </ul>
+        </li>
+      </ol>
+      
+      <p>Para servir junto com a salada de carne, ou mesmo misturada com ela, 
+          é muito bom preparar uma salade de grãos, como de feijão branco, 
+          de soja, ou de grão de bico:</p>
+      <ol>
+        <li>Cozinhe os grãos até que fiquem muito macios. 
+          <em>Por serem servidos frios, devem ficar mais macios do que 
+          se formos prepará-los quentes.</em>
+        </li>
+        <li>Numa saladeira, tempere os grãos, ainda quentes, com sal, 
+          azeite, vinagre e pimenta do reino ou dedo de moça picadinha.</li>
+        <li>Depois de fria a salada, junte a ela dois ou três tomates, sem sementes
+          um punhado de salsinha picada, cebola em fatias fina, orégano e alcaparras
+        </li>
+        <li>Corrija o sal e adicione mais um pouco de azeite e vinagre.</li>
+      </ol>
+
+      <div class="tips">
+        <h3>Dica importante</h3>
+        <p>Quando se prepara soja, seja como salada ou de qualquer outra 
+        forma, deve-se deixá-la de molho,por 1 hora ou mais, trocando 
+        de água uma duas ou três vezes.</p>
+        <p>Põe-se a soja para cozinhar, de preferência em panela de pressão; 
+          deixa-se pegar pressão, troca-se a água por água fria e, 
+          de novo, leva-se ao fogo até que esteja macia. </p>
+      </div>
+    </div>
+  </div>
+</article>
+            </main>
+        </div>
+
+        <hr />
+
+        <footer>
+            <p>&ldquo;A Cuca&rdquo; foi escrito por Beatriz Pichler Ricci, 2007 &ndash; 2009 &copy; <a
+                    href="https://creativecommons.org/licenses/by-nc-nd/4.0/?ref=chooser-v1" target="_blank"
+                    rel="license noopener noreferrer" style="display:inline-block;">CC BY-NC-ND 4.0</a>
+            </p>
+            <p>Site criado por Beatriz Aranha e Angela P Ricci, 2024</p>
+        </footer>
+    </div>
+    <!-- /container -->
+
+    <script>
+        // Service worker
+        if ("serviceWorker" in navigator) {
+            window.addEventListener("load", function () {
+                navigator.serviceWorker
+                    .register("/sw.js")
+                    .then(function (registration) {
+                        // Registration was successful
+                        console.log("ServiceWorker registration successful with scope: ", registration
+                            .scope);
+                    })
+                    .catch(function (err) {
+                        // registration failed :(
+                        console.log("ServiceWorker registration failed: ", err);
+                    });
+            });
+        }
+
+        // Scroll 
+        let lastKnownScrollPosition = 0;
+        let h1 = document.querySelector('h1');
+
+        document.addEventListener('scroll', function(e) {
+            lastKnownScrollPosition = window.scrollY;
+            window.requestAnimationFrame(function() {
+                if(lastKnownScrollPosition > 100) {
+                    h1.classList.add('active');
+                } else {
+                    h1.classList.remove('active');
+                }
+            });
+        }); 
+    </script>
+</body>
+
+</html>

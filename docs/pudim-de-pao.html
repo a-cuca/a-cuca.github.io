@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="keywords" content="" />
+    <meta name="theme-color" content="#685A48" />
+    <meta property="og:url" content="https://a-cuca.github.io/pudim-de-pao.html" />
+    <meta property="og:title" content="Pudim de Pão" />
+    <meta property="description" content="Receita de Pudim de Pão por Beatriz Ricci" />
+    <meta property="og:description" content="Receita de Pudim de Pão por Beatriz Ricci" />
+    <meta property="og:image" content="" />
+    <link href="../img/favicon.svg" type="image/svg+xml" rel="icon" />
+    <link href="../img/favicon.png" type="image/png" rel="icon" />
+    <title>Pudim de Pão: A Cuca</title>
+
+    <link href="./css/main.css" rel="stylesheet" media="all" />
+    <link href="./css/queries.css" rel="stylesheet" media="all" />
+    <link rel="manifest" href="manifest.json" />
+</head>
+
+<body >
+    <div id="container">
+        <!-- PAGE HEADER -->
+        <header>
+            <h1>
+                
+                    <a href="index.html">
+                        <img src="./img/logo.svg" alt="A Cuca, Receitas da Beatriz"></a>
+                    <a class="active" href="index.html">
+                        <img class="active" src="./img/logo-sml.svg" alt="A Cuca, Receitas da Beatriz"></a>
+                
+            </h1>            
+        </header>
+
+        <div id="wrapper">
+            <main>
+                
+<article class="h-recipe">
+  <div class="h-group">
+    <h2 class="p-name">Pudim de Pão</h2>
+    <p class="published">
+      <time class="dt-published">7 de Novembro 2007</time>
+    </p>
+  </div>
+
+  <div class="recipe">
+    <div class="ingredients">
+      <h3>Ingredientes</h3>
+      <ul>
+          <li class="p-ingredient">6 ou 7 pãesinhos amanhecidos</li>
+          <li class="p-ingredient">1/2 <abbr title="litro">l.</abbr> de leite</li>
+          <li class="p-ingredient">5 ovos</li>
+          <li class="p-ingredient">1 cálice de vinho do Porto</li>
+          <li class="p-ingredient">1 <abbr title="colher">c.</abbr> de sopa de manteiga</li>
+          <li class="p-ingredient">100 <abbr title="gramas">gr</abbr> de passas</li>
+          <li class="p-ingredient">açúcar à gosto</li>
+          <li class="p-ingredient">3 cravos da índia</li>
+          <li class="p-ingredient">1 <abbr title="colher">c.</abbr> de café de canela em pó</li>
+          <li class="p-ingredient">uma raspadinha de noz-moscada</li>
+      </ul>
+    </div>
+
+    <div class="e-instructions">
+      <h3>Modo de Fazer</h3>
+      <ol>        
+        <li>Embeba os pães picadinhos no leite fervente.</li>
+        <li>Adicione os outros ingredientes.</li>
+        <li>Misture bem e asse em uma forma bem untada com manteiga. </li>
+      </ol>
+    </div>
+  </div>
+</article>
+            </main>
+        </div>
+
+        <hr />
+
+        <footer>
+            <p>&ldquo;A Cuca&rdquo; foi escrito por Beatriz Pichler Ricci, 2007 &ndash; 2009 &copy; <a
+                    href="https://creativecommons.org/licenses/by-nc-nd/4.0/?ref=chooser-v1" target="_blank"
+                    rel="license noopener noreferrer" style="display:inline-block;">CC BY-NC-ND 4.0</a>
+            </p>
+            <p>Site criado por Beatriz Aranha e Angela P Ricci, 2024</p>
+        </footer>
+    </div>
+    <!-- /container -->
+
+    <script>
+        // Service worker
+        if ("serviceWorker" in navigator) {
+            window.addEventListener("load", function () {
+                navigator.serviceWorker
+                    .register("/sw.js")
+                    .then(function (registration) {
+                        // Registration was successful
+                        console.log("ServiceWorker registration successful with scope: ", registration
+                            .scope);
+                    })
+                    .catch(function (err) {
+                        // registration failed :(
+                        console.log("ServiceWorker registration failed: ", err);
+                    });
+            });
+        }
+
+        // Scroll 
+        let lastKnownScrollPosition = 0;
+        let h1 = document.querySelector('h1');
+
+        document.addEventListener('scroll', function(e) {
+            lastKnownScrollPosition = window.scrollY;
+            window.requestAnimationFrame(function() {
+                if(lastKnownScrollPosition > 100) {
+                    h1.classList.add('active');
+                } else {
+                    h1.classList.remove('active');
+                }
+            });
+        }); 
+    </script>
+</body>
+
+</html>

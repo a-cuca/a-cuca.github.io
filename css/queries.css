@@ -61,6 +61,9 @@
 	div.recipe.alone {
 		display: block;
 	}
+	div.e-instructions {
+		padding-left: 4.5rem;
+	}
 }
 
 @media screen and (min-width: 1300px) {
@@ -70,5 +73,16 @@
 	section.dessert .menu-block {
 		display: grid;
 		grid-template-columns: 1.5fr 1fr;
+	}
+
+	article.h-recipe > div.content {
+		max-width: 100%;
+		display: grid;
+		grid-template-columns: 1.5fr 1fr;
+		align-items: center;
+		gap: 4rem;
+	}
+	article.h-recipe > div.content table {
+		margin-bottom: 0;
 	}
 }

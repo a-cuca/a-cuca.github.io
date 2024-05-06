@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="keywords" content="" />
+    <meta name="theme-color" content="#685A48" />
+    <meta property="og:url" content="https://a-cuca.github.io/grispelli.html" />
+    <meta property="og:title" content="Grispelli" />
+    <meta property="description" content="Receita de Grispelli por Beatriz Ricci" />
+    <meta property="og:description" content="Receita de Grispelli por Beatriz Ricci" />
+    <meta property="og:image" content="" />
+    <link href="../img/favicon.svg" type="image/svg+xml" rel="icon" />
+    <link href="../img/favicon.png" type="image/png" rel="icon" />
+    <title>Grispelli: A Cuca</title>
+
+    <link href="./css/main.css" rel="stylesheet" media="all" />
+    <link href="./css/queries.css" rel="stylesheet" media="all" />
+    <link rel="manifest" href="manifest.json" />
+</head>
+
+<body >
+    <div id="container">
+        <!-- PAGE HEADER -->
+        <header>
+            <h1>
+                
+                    <a href="index.html">
+                        <img src="./img/logo.svg" alt="A Cuca, Receitas da Beatriz"></a>
+                    <a class="active" href="index.html">
+                        <img class="active" src="./img/logo-sml.svg" alt="A Cuca, Receitas da Beatriz"></a>
+                
+            </h1>            
+        </header>
+
+        <div id="wrapper">
+            <main>
+                
+<article class="h-recipe">
+  <div class="h-group">
+    <h2 class="p-name">Grispelli</h2>
+    <p class="published">
+      <time class="dt-published">3 de Novembro 2007</time>
+    </p>
+  </div>
+
+  <div class="recipe alone">
+    <div class="e-instructions">
+      <h3>Modo de Fazer</h3>
+      <ol>        
+        <li>Os grispelli são feitos com a mesma massa da <a href="pizzela.html">pizzela</a>.</li>
+        <li>Abra a massa, mais fina do que para a pizzela.</li>
+        <li>Corte retangulinhos de mais ou menos 2cm por 3cm.</li>
+        <li>Coloque sobre eles o recheio que quizer, como alice, pedacinhos 
+          de azeitona preta, queijo roqueford ou outro queijo forte qualquer, etc.</li>
+        <li>Dobre ao comprido (me explico bem?) e torça como parafuso.</li>
+        <li>Aperte as pontas para não desenrolarem.</li>
+      </ol>
+
+      <div class="tips">
+        <h3>Variação</h3>
+        <p>Outra forma de se fazer os grispelli, seria pegar uma bolinha de massa, 
+        do tamanho de bola de gude, abrir com os dedos, colocar no meio o recheio 
+        e torcer, formando uns bastõesinhos.</p>
+        <p>Frite e sirva. Humm! agora quem está com água na boca sou eu! </p>
+      </div>
+    </div>
+  </div>
+</article>
+            </main>
+        </div>
+
+        <hr />
+
+        <footer>
+            <p>&ldquo;A Cuca&rdquo; foi escrito por Beatriz Pichler Ricci, 2007 &ndash; 2009 &copy; <a
+                    href="https://creativecommons.org/licenses/by-nc-nd/4.0/?ref=chooser-v1" target="_blank"
+                    rel="license noopener noreferrer" style="display:inline-block;">CC BY-NC-ND 4.0</a>
+            </p>
+            <p>Site criado por Beatriz Aranha e Angela P Ricci, 2024</p>
+        </footer>
+    </div>
+    <!-- /container -->
+
+    <script>
+        // Service worker
+        if ("serviceWorker" in navigator) {
+            window.addEventListener("load", function () {
+                navigator.serviceWorker
+                    .register("/sw.js")
+                    .then(function (registration) {
+                        // Registration was successful
+                        console.log("ServiceWorker registration successful with scope: ", registration
+                            .scope);
+                    })
+                    .catch(function (err) {
+                        // registration failed :(
+                        console.log("ServiceWorker registration failed: ", err);
+                    });
+            });
+        }
+
+        // Scroll 
+        let lastKnownScrollPosition = 0;
+        let h1 = document.querySelector('h1');
+
+        document.addEventListener('scroll', function(e) {
+            lastKnownScrollPosition = window.scrollY;
+            window.requestAnimationFrame(function() {
+                if(lastKnownScrollPosition > 100) {
+                    h1.classList.add('active');
+                } else {
+                    h1.classList.remove('active');
+                }
+            });
+        }); 
+    </script>
+</body>
+
+</html>

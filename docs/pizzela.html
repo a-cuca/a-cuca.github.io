@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="keywords" content="" />
+    <meta name="theme-color" content="#685A48" />
+    <meta property="og:url" content="https://a-cuca.github.io/pizzela.html" />
+    <meta property="og:title" content="Pizzela" />
+    <meta property="description" content="Receita de Pizzela por Beatriz Ricci" />
+    <meta property="og:description" content="Receita de Pizzela por Beatriz Ricci" />
+    <meta property="og:image" content="" />
+    <link href="../img/favicon.svg" type="image/svg+xml" rel="icon" />
+    <link href="../img/favicon.png" type="image/png" rel="icon" />
+    <title>Pizzela: A Cuca</title>
+
+    <link href="./css/main.css" rel="stylesheet" media="all" />
+    <link href="./css/queries.css" rel="stylesheet" media="all" />
+    <link rel="manifest" href="manifest.json" />
+</head>
+
+<body >
+    <div id="container">
+        <!-- PAGE HEADER -->
+        <header>
+            <h1>
+                
+                    <a href="index.html">
+                        <img src="./img/logo.svg" alt="A Cuca, Receitas da Beatriz"></a>
+                    <a class="active" href="index.html">
+                        <img class="active" src="./img/logo-sml.svg" alt="A Cuca, Receitas da Beatriz"></a>
+                
+            </h1>            
+        </header>
+
+        <div id="wrapper">
+            <main>
+                
+<article class="h-recipe">
+  <div class="h-group">
+    <h2 class="p-name">Pizzela</h2>
+    <p class="published">
+      <time class="dt-published">3 de Novembro 2007</time>
+    </p>
+  </div>
+
+  <div class="recipe">
+    <div class="ingredients">
+      <h3>Ingredientes do Molho</h3>
+      <ul>
+          <li class="p-ingredient">8 ou nove tomates grandes</li>
+          <li class="p-ingredient">1 cebola média</li>
+          <li class="p-ingredient">1 dente de alho</li>
+          <li class="p-ingredient">orégano, sal</li>
+          <li class="p-ingredient">óleo de milho</li>
+          <li class="p-ingredient">100gr de alice, de preferência espanhol</li>
+      </ul>
+
+      <h3>Ingredientes da Massa (Para mais ou menos 40 pizzelas)</h3>
+      <ul>
+          <li class="p-ingredient">1 <abbr title="colher">c.</abbr> de café de açúcar</li>
+          <li class="p-ingredient">1 tablete de fermento fleishmann</li>
+          <li class="p-ingredient">1/2 xícara de leite morno para dissolver o fermento</li>
+          <li class="p-ingredient">1 copo de leite</li>
+          <li class="p-ingredient">1 xícara de café de azeite</li>
+          <li class="p-ingredient">1 ovo</li>
+          <li class="p-ingredient">sal</li>
+          <li class="p-ingredient">farinha de trigo</li>
+      </ul>
+    </div>
+
+    <div class="e-instructions">
+      <h3>Modo de Fazer do Molho</h3>
+      <ol>        
+        <li>Aqueça o óleo numa panela,junte o tomate picado, a cebola e o alho.</li>
+        <li>Ponha uma pitada pequena de sal e um pouco de orégano.</li>
+        <li>Adicione 1/2 copo de água e deixe ferver até o tomate se desfazer.</li>
+        <li>Passe pela peneira, junte o alice e mexa bem.</li>
+        <li>Deixe ferver um pouco para o alice se desmanchar.</li>
+      </ol>
+
+      <h3>Modo de Fazer da Massa</h3>
+      <ol>        
+        <li>Dissolva o fermento com 1/2 xíc. de leite.</li>
+        <li>Adicione o açúcar e com farinha de trigo faça um mingau.</li>
+        <li>Deixe crescer.</li>
+        <li>Quando a massa dobrar de volume, ponha o resto dos ingredientes, 
+          sendo que a farinha põe-se até dar ponto de enrolar.</li>
+        <li>Deixe crescer novamente.</li>
+        <li>Faça, então, pequenas bolas e depois amasse com as mãos 
+          formando pizzinhas de + ou - 7 cm de diâmetro.</li>
+        <li>Cubra com um pano e deixe retomar o crescimento por meia hora.
+          Pode-se, para poupar tempo, abrir a massa toda de uma vez, 
+          com menos de 1 cm de espessura e, com um copo, cortar as pizzinhas.</li>          
+        <li>Frite e cubra com o molho de alice e salpique generosamente com orégano.</li>
+        <li><strong>Sirva-as e observe o prazer guloso de quem as devora</strong>. </li>
+      </ol>
+    </div>
+  </div>
+</article>
+            </main>
+        </div>
+
+        <hr />
+
+        <footer>
+            <p>&ldquo;A Cuca&rdquo; foi escrito por Beatriz Pichler Ricci, 2007 &ndash; 2009 &copy; <a
+                    href="https://creativecommons.org/licenses/by-nc-nd/4.0/?ref=chooser-v1" target="_blank"
+                    rel="license noopener noreferrer" style="display:inline-block;">CC BY-NC-ND 4.0</a>
+            </p>
+            <p>Site criado por Beatriz Aranha e Angela P Ricci, 2024</p>
+        </footer>
+    </div>
+    <!-- /container -->
+
+    <script>
+        // Service worker
+        if ("serviceWorker" in navigator) {
+            window.addEventListener("load", function () {
+                navigator.serviceWorker
+                    .register("/sw.js")
+                    .then(function (registration) {
+                        // Registration was successful
+                        console.log("ServiceWorker registration successful with scope: ", registration
+                            .scope);
+                    })
+                    .catch(function (err) {
+                        // registration failed :(
+                        console.log("ServiceWorker registration failed: ", err);
+                    });
+            });
+        }
+
+        // Scroll 
+        let lastKnownScrollPosition = 0;
+        let h1 = document.querySelector('h1');
+
+        document.addEventListener('scroll', function(e) {
+            lastKnownScrollPosition = window.scrollY;
+            window.requestAnimationFrame(function() {
+                if(lastKnownScrollPosition > 100) {
+                    h1.classList.add('active');
+                } else {
+                    h1.classList.remove('active');
+                }
+            });
+        }); 
+    </script>
+</body>
+
+</html>
