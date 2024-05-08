@@ -49,10 +49,10 @@
 	h1.active {
 		position: fixed;
 		right: 1vw;
-		width: 70px;
+		width: 139px;
 	}
-	h1.active .active {display: inline-block;}
-	h1.active :not(.active) {display: none;}	
+	h1.active > a.active {display: inline-block;}
+	h1.active > :not(.active) {display: none;}	
 }
 
 @media screen and (min-width: 1000px) {

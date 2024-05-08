@@ -45,8 +45,8 @@ h1 {
   margin: calc(1.5em + 0.25vw) auto calc(2em + 0.25vw);
   transition: all 0.2s;
 }
-  h1 .active {display: none;}
-  h1 :not(.active) {display: inline-block;}	
+  h1 > .active {display: none;}
+  h1 > :not(.active) {display: inline-block;}	
 
 h2 {
   font-size: calc(1.5em + 0.5vw);
@@ -257,6 +257,31 @@ th {
 }
 
 
+/* ---------------------------- BACK HOME ANIMATION ------------------- */
+
+@keyframes rotate {
+  0% {transform: rotate(0deg)}
+  100% {transform: rotate(125deg)}
+}
+@keyframes rotateBack {
+  0% {transform: rotate(125deg)}
+  100% {transform: rotate(0deg)}
+}
+
+#arrow {transform-origin: 50%;}
+
+a.svg #arrow {
+  animation-fill-mode: forwards;
+  animation-duration: 1s;
+  animation-name: rotateBack;
+}
+a:hover #arrow {
+  animation-fill-mode: forwards;
+  animation-duration: 1s;
+  animation-name: rotate;
+}
+
+
 /* ------------------------------ SECTIONS ---------------------------- */
 
 .sr-only {
@@ -439,7 +464,7 @@ div.blog-entry {
   background-color: var(--body-bg);
   background-repeat: no-repeat;
   background-position: top 1.5rem center;
-  padding: calc(1.5rem + 90px) calc(1rem + 1vw) calc(1rem + 1vw);
+  padding: calc(1.5rem + 90px) calc(1rem + 1vw) 1.5rem;
   border-radius: var(--radius);
 }
 div.blog-entry:hover {
