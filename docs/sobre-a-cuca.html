@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="keywords" content="" />
+    <meta name="theme-color" content="#685A48" />
+    <meta property="og:url" content="https://a-cuca.github.io/sobre-a-cuca.html" />
+    <meta property="og:title" content="Sobre A Cuca" />
+    <meta property="description" content="Sobre o site A Cuca" />
+    <meta property="og:description" content="Sobre o site A Cuca" />
+    <meta property="og:image" content="" />
+    <link href="../img/favicon.svg" type="image/svg+xml" rel="icon" />
+    <link href="../img/favicon.png" type="image/png" rel="icon" />
+    <title>Sobre A Cuca: A Cuca</title>
+
+    <link href="./css/main.css" rel="stylesheet" media="all" />
+    <link href="./css/queries.css" rel="stylesheet" media="all" />
+    <link rel="manifest" href="manifest.json" />
+</head>
+
+<body >
+    <div id="container">
+        <!-- PAGE HEADER -->
+        <header>
+            <h1>
+                
+                    <a href="index.html">
+                        <img src="./img/logo.svg" alt="A Cuca, Receitas da Beatriz"></a>
+                    <a class="active" href="index.html">
+                        <img class="active" src="./img/logo-sml.svg" alt="A Cuca, Receitas da Beatriz"></a>
+                
+            </h1>            
+        </header>
+
+        <div id="wrapper">
+            <main>
+                
+<article class="h-entry">
+  <div class="h-group">
+    <h2 class="p-name">Sobre &ldquo;A Cuca&rdquo;</h2>
+  </div>
+
+  <div class="e-content">
+    <p>Esse site foi criado &mdash; com muito amor &mdash; em 
+      homenagem à Beatriz Pichler Ricci, mãe e avó querida, que nos 
+      deixou dia 26 de abril de 2024.</p>
+    <p>Em 2007, ela começou um blog de receitas para a familia, no Blogspot; 
+      e qual melhor homenagem à essa grande cozinheira que de resgatar 
+      os seus textos e de criar com carinho um site só à ela, com a cara dela?
+    </p>
+    <p>Do pai austríaco, Beatriz herdou um gostinho pelo kitch, e adorava seus 
+      bibelôs, que decoravam a casa inteira. Foi uma dessas lembranças 
+      da Áustria que inspirou o logo do site: a casinha miniatura de madeira, 
+      lembrança de Innsbruck.
+    </p>
+
+    <p class="picture">
+      <img src="img/casinha.svg" alt="A casinha miniature de madeira de Innsbruck">
+    </p>
+
+    <div class="tips">
+      <h3>Colofon</h3>
+
+      <ul>
+        <li>Design e integração feitos por <a href="gericci.me">Angela P Ricci</a></li>
+        <li>Estratégia de conteudo foi feita com Beatriz Aranha</li>
+        <li>Fotos de Beatriz Aranha e Diana Ricci Bradshaw</li>
+        <li>As ilustrações foram feitas por <a href="gericci.me">Angela P Ricci</a></li>
+        <li>Os icones são da <a href="https://remixicon.com/">Remixicon</a></li>
+        <li>Obrigada à Yoksel por seu 
+          <a href="https://yoksel.github.io/url-encoder/" lang="en">Encoder for SVG</a></li>
+        <li>O site foi criado com o gerador de sites <a href="https://www.11ty.dev/">Eleventy</a></li>
+      </ul>
+
+      <p class="note">Nos usamos Microformats :)</p>
+    </div>
+  </div>
+</article>
+            </main>
+        </div>
+
+        <hr />
+
+        <footer>
+            <p>&ldquo;A Cuca&rdquo; foi escrito por Beatriz Pichler Ricci, 2007 &ndash; 2009 &copy; <a
+                    href="https://creativecommons.org/licenses/by-nc-nd/4.0/?ref=chooser-v1" target="_blank"
+                    rel="license noopener noreferrer" style="display:inline-block;">CC BY-NC-ND 4.0</a>
+            </p>
+            <p>
+                Site criado por Beatriz Aranha e Angela P Ricci, 2024 &mdash; 
+                <a href="sobre-a-cuca.html">Sobre esse site</a>
+            </p>
+        </footer>
+    </div>
+    <!-- /container -->
+
+    <script>
+        // Service worker
+        if ("serviceWorker" in navigator) {
+            window.addEventListener("load", function () {
+                navigator.serviceWorker
+                    .register("/sw.js")
+                    .then(function (registration) {
+                        // Registration was successful
+                        console.log("ServiceWorker registration successful with scope: ", registration
+                            .scope);
+                    })
+                    .catch(function (err) {
+                        // registration failed :(
+                        console.log("ServiceWorker registration failed: ", err);
+                    });
+            });
+        }
+
+        // Scroll 
+        let lastKnownScrollPosition = 0;
+        let h1 = document.querySelector('h1');
+
+        document.addEventListener('scroll', function(e) {
+            lastKnownScrollPosition = window.scrollY;
+            window.requestAnimationFrame(function() {
+                if(lastKnownScrollPosition > 100) {
+                    h1.classList.add('active');
+                } else {
+                    h1.classList.remove('active');
+                }
+            });
+        }); 
+    </script>
+</body>
+
+</html>

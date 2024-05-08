@@ -4,16 +4,47 @@
           		Ge Ricci, 2024
 -------------------------------------------------------------------- */
 
+
+@media screen and (min-width: 500px) {
+	div.intro {
+		padding-left: 4.5rem;
+	}
+	div.intro::before {
+		content: "";
+		position: absolute;
+		width: 50px;
+		height: 50px;  
+		top: 1rem;
+		left: 1rem;
+		background-image: url(../img/from-blog.svg);
+		background-repeat: no-repeat;
+	}
+}
+
+
 @media screen and (min-width: 900px) {
 	main {
 		display: grid;
 		grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
 		min-height: 900px;
 	}
+	
+	section.entry:not(.intro) {
+		padding: calc(0.5rem + 1vw) calc(1rem + 1vw) calc(1rem + 1vw);
+	}
+
+	aside {
+		flex-direction: row;
+	}
 
 	section.dessert {
 		grid-column: 1/ span 2;
 	}	
+	
+	section.dessert .menu-block {
+		display: grid;
+		grid-template-columns: 1.5fr 1fr;
+	}
 
 	h1.active {
 		position: fixed;
@@ -28,7 +59,6 @@
 	div.h-group {
 		display: grid;
 		grid-template-columns: 1fr 1.5fr;
-		justify-content: space-between;
 		gap: 0 3rem;
 	}
 	div.h-group p.published {
@@ -69,10 +99,6 @@
 @media screen and (min-width: 1300px) {
 	main {
 		grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
-	}
-	section.dessert .menu-block {
-		display: grid;
-		grid-template-columns: 1.5fr 1fr;
 	}
 
 	article.h-recipe > div.content {

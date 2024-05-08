@@ -227,6 +227,13 @@ div.h-group .dt-published{
  margin: -1rem 0 calc(1.5rem + 1vw);
 }
 
+aside {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  grid-column: 1/span 2;
+}
+
 
 /* ------------------------------ TABLES ---------------------------- */
 
@@ -284,17 +291,7 @@ article ul:not(.menu), article ol {margin: 1em;}
 }
 
 div.intro {
-  padding: calc(1rem + 1vw) calc(1rem + 1vw) calc(1rem + 1vw) 4.5rem;
-}
-div.intro::before {
-  content: "";
-  position: absolute;
-  width: 50px;
-  height: 50px;  
-  top: 1rem;
-  left: 1rem;
-  background-image: url(../img/from-blog.svg);
-  background-repeat: no-repeat;
+  padding: calc(1rem + 1vw);
 }
 
 p.published {margin-bottom: 1.5rem;}
@@ -366,6 +363,10 @@ article.h-recipe > div.content {
   border-radius: var(--radius);
 }
 
+.u-photo {
+  border-radius: var(--radius);
+}
+
 div.h-group div.intro {
   margin-bottom: 2rem;
 }
@@ -423,14 +424,37 @@ div.tips {
   border-radius: var(--radius);
 }
 
-div.blog-entry {
-  position: relative;
-  text-align: center;
-  background-color: var(--body-bg);
-  padding: calc(1rem + 1vw);
-  border-radius: var(--radius);
+div.tips h3 {margin-top: 0;}
+
+p.picture {
+  margin: 3rem 0;
 }
 
+div.blog-entry {
+  position: relative;
+  flex: 1;
+  font-variation-settings: "wght" 700;
+  line-height: 1.35;
+  text-align: center;
+  background-color: var(--body-bg);
+  background-repeat: no-repeat;
+  background-position: top 1.5rem center;
+  padding: calc(1.5rem + 90px) calc(1rem + 1vw) calc(1rem + 1vw);
+  border-radius: var(--radius);
+}
+div.blog-entry:hover {
+  background-color: var(--high-light);
+}
+
+div.blog-entry:nth-child(1) {
+  background-image: url(../img/natal.svg);
+}
+div.blog-entry:nth-child(2) {
+  background-image: url(../img/colesterol.svg);
+}
+div.blog-entry:nth-child(3) {
+  background-image: url(../img/consideracoes.svg);
+}
 
 div.blog-entry a {text-decoration: none;}
 div.blog-entry a::after {
@@ -440,4 +464,9 @@ div.blog-entry a::after {
   height: 100%;
   top: 0;
   left: 0;
+}
+
+article.h-entry .e-content {
+  max-width: 45em;
+  margin: 0 auto;
 }
