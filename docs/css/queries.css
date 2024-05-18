@@ -53,6 +53,12 @@
 	}
 	h1.active > a.active {display: inline-block;}
 	h1.active > :not(.active) {display: none;}	
+
+	div.tips {
+		padding: calc(1rem + 1vw);
+		border: 1px solid var(--high-extra-light);
+		border-radius: var(--radius);
+	}
 }
 
 @media screen and (min-width: 1000px) {
@@ -74,7 +80,7 @@
 		grid-template-columns: 1fr 2fr;
 		gap: 4rem;
 		padding: 2rem 0;
-    margin: 2rem 0;
+    	margin: 2rem 0;
 		border: none;
 		border-top: 6px dotted var(--high-extra-light);
 		border-bottom: 6px dotted var(--high-extra-light);
@@ -83,7 +89,7 @@
 	div.ingredients {
 		margin-bottom: 0;
 	}
-  div.ingredients li {line-height: 1.45;}
+  	div.ingredients li {line-height: 1.45;}
 
 	div.recipe.simple {
 		grid-template-columns: 1fr 1fr;
@@ -94,6 +100,15 @@
 	div.e-instructions {
 		padding-left: 4.5rem;
 	}
+
+	div.sugestions {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		grid-template-rows: auto auto;
+		align-items: center;
+		gap: 0 3rem;
+	}
+	div.sugestions > p {grid-row: 1/span 3;}
 }
 
 @media screen and (min-width: 1300px) {

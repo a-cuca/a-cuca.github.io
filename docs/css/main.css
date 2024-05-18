@@ -443,10 +443,9 @@ div.e-instructions ol + p {
 
 div.tips {
   align-self: baseline;
-  padding: calc(1rem + 1vw);
+  padding-top: calc(1rem + 1vw);
   margin-top: 2rem;
-  border: 1px solid var(--high-extra-light);
-  border-radius: var(--radius);
+  border-top: 1px solid var(--high-extra-light);
 }
 
 div.tips h3 {margin-top: 0;}
