@@ -25,6 +25,6 @@
   "author": "Beatriz Pichler Ricci",
   "display": "minimal-ui",
   "start_url": "/index.html",
-  "background_color": "#F8F6F5",
-  "theme_color": "#EF7918"
+  "background_color": "#90dac4",
+  "theme_color": "#b9e4af"
   }
