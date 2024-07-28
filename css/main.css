@@ -426,6 +426,10 @@ div.e-instructions {
   padding: calc(1rem + 1vw);
 }
 
+div.e-instructions p.picture {
+  margin-top: 0;
+}
+
 div.recipe.alone div.e-instructions {
   max-width: 25lh;
 }
